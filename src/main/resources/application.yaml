@@ -14,3 +14,10 @@ spring:
     url: jdbc:postgresql://localhost:5433/vssstats
     username: postgres
     password: postgres
+
+  # https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html
+  kafka:
+    topic: passwords
+    group-id: stats-service-group
+    consumer:
+      bootstrap-servers: localhost:9092

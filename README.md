@@ -10,3 +10,5 @@ Start Postgres database (on post 5433) by running\
 Once all the containers are healthy start the application\
 `$ mvn spring-boot:run`\
 The application will be running on port **8099** (you can change it application.yaml).
+
+Application will read events from kafka created by vss-java application
