@@ -1,5 +1,6 @@
 package com.virtuslab.vssjavastats.repository;
 
+import com.virtuslab.vssjavastats.controller.HashTypesView;
 import com.virtuslab.vssjavastats.domain.Password;
 import com.virtuslab.vssjavastats.domain.StatsRepository;
 import org.springframework.stereotype.Repository;
@@ -23,5 +24,11 @@ public class StatsRepositoryImpl implements StatsRepository {
     public Password getByHash(String hash) {
         final var foundEntity = jpaRepository.findByPasswordHash(hash);
         return new Password(foundEntity.getHashType(), foundEntity.getPassword(), foundEntity.getPasswordHash());
+    }
+
+    @Override
+    public HashTypesView countHashTypes() {
+        final var dtos = jpaRepository.findByHashType();
+        return HashTypesView.from(dtos);
     }
 }
