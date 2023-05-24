@@ -12,3 +12,6 @@ Once all the containers are healthy start the application\
 The application will be running on port **8099** (you can change it application.yaml).
 
 Application will read events from kafka created by vss-java application
+
+Swagger UI for application is available at: `http://localhost:8099/swagger-ui/index.html` and API docs
+are available at: `http://localhost:8099/api-docs`
